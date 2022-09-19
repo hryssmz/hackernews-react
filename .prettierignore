@@ -1,0 +1,5 @@
+.husky/_/
+coverage/
+dist/
+node_modules/
+storybook-static/
