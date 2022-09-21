@@ -64,3 +64,15 @@ Successfully created .eslintrc.cjs file in /home/hryssmz/projects/real-world-app
 ```sh
 npm install -D eslint-config-prettier eslint-plugin-react-hooks
 ```
+
+### 1.3. Dependencies
+
+---
+
+#### 1.3.1. Apollo Client
+
+---
+
+```sh
+npm install @apollo/client graphql
+```
