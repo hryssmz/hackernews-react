@@ -76,3 +76,11 @@ npm install -D eslint-config-prettier eslint-plugin-react-hooks
 ```sh
 npm install @apollo/client graphql
 ```
+
+#### 1.3.2. React Router
+
+---
+
+```sh
+npm install react-router-dom
+```

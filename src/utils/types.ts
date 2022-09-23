@@ -9,3 +9,7 @@ export interface Feed {
   id: string;
   links: Link[];
 }
+
+export interface AuthPayload {
+  token: string;
+}
