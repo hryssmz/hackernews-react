@@ -1,25 +1,10 @@
 // components/Login.tsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { gql, useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { AUTH_TOKEN } from "../utils/constants";
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from "../utils/queries";
 import type { AuthPayload } from "../utils/types";
-
-const SIGNUP_MUTATION = gql`
-  mutation SignupMutation($email: String!, $password: String!, $name: String!) {
-    signup(email: $email, password: $password, name: $name) {
-      token
-    }
-  }
-`;
-
-const LOGIN_MUTATION = gql`
-  mutation LoginMutation($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
-      token
-    }
-  }
-`;
 
 export default function Login() {
   const [formState, setFormState] = useState({

@@ -5,6 +5,7 @@ import { AUTH_TOKEN } from "../utils/constants";
 export default function Header() {
   const navigate = useNavigate();
   const authToken = localStorage.getItem(AUTH_TOKEN);
+
   return (
     <div className="flex pal justify-between nowrap orange">
       <div className="flex flex-fixed black">
