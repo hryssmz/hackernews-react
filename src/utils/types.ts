@@ -11,6 +11,7 @@ export interface Link {
 export interface Feed {
   id: string;
   links: Link[];
+  count: number;
 }
 
 export interface AuthPayload {

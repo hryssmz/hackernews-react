@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
+import { DEFAULT_FEED_QUERY_VARS } from "../utils/constants";
 import { CREATE_LINK_MUTATION, FEED_QUERY } from "../utils/queries";
 import { Feed, Link } from "../utils/types";
 
@@ -30,6 +31,7 @@ export default function CreateLink() {
 
       const feedQuery = cache.readQuery<{ feed: Feed }>({
         query: FEED_QUERY,
+        variables: DEFAULT_FEED_QUERY_VARS,
       });
       if (!feedQuery) {
         return;
@@ -45,6 +47,7 @@ export default function CreateLink() {
             links: [post, ...feed.links],
           },
         },
+        variables: DEFAULT_FEED_QUERY_VARS,
       });
     },
   });

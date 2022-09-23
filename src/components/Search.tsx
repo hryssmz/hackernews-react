@@ -7,9 +7,9 @@ import { Feed } from "../utils/types";
 
 export default function Search() {
   const [searchFilter, setSearchFilter] = useState("");
-  const [executeSearch, { data }] = useLazyQuery<{ feed: Feed }>(
-    FEED_SEARCH_QUERY
-  );
+  const [executeSearch, { data }] = useLazyQuery<{
+    feed: Pick<Feed, "id" | "links">;
+  }>(FEED_SEARCH_QUERY);
 
   return (
     <div>

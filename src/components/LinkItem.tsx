@@ -1,7 +1,7 @@
 // components/LinkItem.tsx
 import { useMutation } from "@apollo/client";
 import { timeDifferenceForDate } from "../utils";
-import { AUTH_TOKEN } from "../utils/constants";
+import { AUTH_TOKEN, DEFAULT_FEED_QUERY_VARS } from "../utils/constants";
 import { FEED_QUERY, VOTE_MUTATION } from "../utils/queries";
 import type { Feed, Link, Vote } from "../utils/types";
 
@@ -25,6 +25,7 @@ export default function LinkItem(props: Props) {
 
       const feedQuery = cache.readQuery<{ feed: Feed }>({
         query: FEED_QUERY,
+        variables: DEFAULT_FEED_QUERY_VARS,
       });
       if (!feedQuery) {
         return;
@@ -40,6 +41,7 @@ export default function LinkItem(props: Props) {
 
       cache.writeQuery<{ feed: { links: Link[] } }>({
         query: FEED_QUERY,
+        variables: DEFAULT_FEED_QUERY_VARS,
         data: {
           feed: {
             links: updatedLinks,
